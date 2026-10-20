@@ -1,0 +1,17 @@
+# Sprint 1B - Docker Compose
+# Run Student Portfolio and Banking App together
+
+services:
+  studentportfolio:
+    build: .
+    container_name: studentportfolio
+    ports:
+      - "3000:80"
+    restart: unless-stopped
+
+  bankingapp:
+    build: ./BankingApp
+    container_name: bankingapp
+    ports:
+      - "5090:5090"
+    restart: unless-stopped
